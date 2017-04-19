@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <select name='rates' class="filterRates" ng-options="rate for rate in exchangeRates" ng-model="selectedRate" ng-change="changeRate()"></select>
+            <button type="button" class="btn btn-primary" ng-click="reset()">Reset to USD</button>
+            <table class="table table-striped">
+                <thead>
+                    <th>Company</th>
+                    <th>#</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(key, value) in companies">
+                        <td>{{key}}</td>
+                        <td ng-style="checkValue(value)">{{value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
